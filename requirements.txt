@@ -1,0 +1,13 @@
+matplotlib>=3.03
+numpy>=1.13.0
+opencv-python
+pandas
+pillow
+protobuf==3.2.0
+scikit-learn
+scipy
+vtk
+filterpy
+progressbar
+tqdm
+pathlib2
