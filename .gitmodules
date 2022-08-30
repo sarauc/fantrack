@@ -1,0 +1,3 @@
+[submodule "fan_track/object_detector"]
+	path = fan_track/object_detector
+	url = git@github.com:kujason/avod.git
