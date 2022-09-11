@@ -11,7 +11,7 @@ class GlobalConfig:
         GlobalConfig has configuratins that are generic to both the networks.
     """
 
-    KITTI_ROOT = os.path.expanduser('~/Kitti')
+    KITTI_ROOT = '/content/Kitti'  #os.path.expanduser('~/Kitti')
     KITTI_DIR = KITTI_ROOT + '/object'
     SIMNET_DATASET_PATH = KITTI_ROOT + '/simnet_dataset'
 

@@ -3,6 +3,7 @@ import numpy as np
 import sys
 import time
 import shutil
+import avod
 import fan_track.data_generation.position_shape_utils as ps_utils
 import fan_track.utils.kitti_tracking_utils as kitti_tracking_utils
 import tqdm
@@ -40,10 +41,10 @@ class KittiSimnetDataset():
         # the ratio of validation to training
         self.validation_ratio = 0.20
 
-        checkpoint_name = 'pyramid_cars_with_aug_example'
+        avod_root_dir = '/content/fantrack/fan_track/object_detector/'
+        checkpoint_name = 'avod_cars_fast'
         experiment_config = checkpoint_name + '.config'
-        experiment_config_path = os.path.join(avod_root_dir() ,'data',
-                                              'outputs',checkpoint_name,experiment_config)
+        experiment_config_path = os.path.join(avod_root_dir ,'data',checkpoint_name,experiment_config)
 
         # Read the configurations
         model_config, _, _, dataset_config = config_builder.get_configs_from_pipeline_file(
@@ -57,10 +58,10 @@ class KittiSimnetDataset():
         self.dataset_config.data_split_dir = 'testing'
         self.dataset_config.has_labels = False
         self.dataset_config.dataset_dir = GlobalConfig.KITTI_ROOT + "/object"
-
+        print ( self.dataset_config.dataset_dir)
         # Remove augmentation during evaluation in test mode
         self.dataset_config.aug_list = []
-
+        print (self.dataset_config)
         kitti_dataset = DatasetBuilder.build_kitti_dataset(self.dataset_config, use_defaults=False)
 
         self.feat_ext = BevCamFeatExtractor(dataset=kitti_dataset, model_config=model_config)
