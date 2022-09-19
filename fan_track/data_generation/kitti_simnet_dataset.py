@@ -226,7 +226,12 @@ class KittiSimnetDataset():
                                 if (measurements.size > 0):
 
                                     if (targets.size > 0):
-
+                                        
+                                        # kitti dataset issue
+                                        if video_no == '0001' and frame_id in range(177, 181):
+                                          print ('There is missing data in KITTI tracking dataset at seq 1, frame 177-180!')
+                                          continue
+                                            
                                         # save targets, measurements, and labels in a numpy file
                                         example_idx, num_pos_exp, num_neg_pos,m_keep = self.save_examples(video_no,
                                                                                  example_idx,
@@ -409,7 +414,12 @@ class KittiSimnetDataset():
 
                             if frame_id > last_training_frame:
                                 is_training_frame = False
-
+                                
+                            # kitti dataset issue
+                            if video_no == '0001' and frame_id in range(177, 181):
+                                print ('There is missing data in KITTI tracking dataset at seq 1, frame 177-180!')
+                                continue
+                                            
                             # save targets, measurements, and labels in the numpy file named as example_idx
                             example_idx, num_pos_exp,num_neg_pos,_ = self.save_examples(video_no,
                                                                                        example_idx,
