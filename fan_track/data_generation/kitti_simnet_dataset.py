@@ -74,7 +74,8 @@ class KittiSimnetDataset():
 
     def generate_dataset(self, label_files = None):
         '''Generate numpy array files for objects in each two successive frames in a video '''
-
+       
+        #/content/Kitti/tracking_dataset/labels/label_02 --> about 20 samples 
         label_path = os.path.join(GlobalConfig.TRACKING_DATASET,
                                                                  'labels',
                                                                  'label_02')
