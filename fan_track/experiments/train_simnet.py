@@ -19,8 +19,8 @@ def main():
     args.training_type = TrainingType.Simnet
     args.epochs = 500
 
-    if not os.path.exists(AssocnetConfig.SIMNET_CKPT_DIR):
-        os.makedirs(AssocnetConfig.SIMNET_CKPT_DIR)
+    if not os.path.exists(SimnetConfig.SIMNET_CKPT_DIR):
+        os.makedirs(SimnetConfig.SIMNET_CKPT_DIR)
 
     model = assoc_model.AssocModel(args)
     batch_sampler = SimnetBatchSampler(mb_dir = GlobalConfig.SIMNET_MINIBATCH_PATH)
