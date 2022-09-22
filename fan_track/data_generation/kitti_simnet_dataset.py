@@ -40,10 +40,11 @@ class KittiSimnetDataset():
         # the ratio of validation to training
         self.validation_ratio = 0.20
 
-        checkpoint_name = 'pyramid_cars_with_aug_example'
+        avod_root_dir = '/content/fantrack/fan_track/object_detector/'
+        checkpoint_name = 'avod_cars_fast'
         experiment_config = checkpoint_name + '.config'
-        experiment_config_path = os.path.join(avod_root_dir() ,'data',
-                                              'outputs',checkpoint_name,experiment_config)
+        experiment_config_path = os.path.join(avod_root_dir ,'data',checkpoint_name,experiment_config)
+
 
         # Read the configurations
         model_config, _, _, dataset_config = config_builder.get_configs_from_pipeline_file(
