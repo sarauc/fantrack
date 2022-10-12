@@ -1,5 +1,6 @@
 import os
 import tensorflow as tf
+tf.compat.v1.disable_eager_execution()
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
