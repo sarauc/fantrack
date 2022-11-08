@@ -306,8 +306,8 @@ class Trainer(object):
 
                 # TODO : Replace the train op
                 # train the assoc_net
-                summary, avg_loss, avg_accuracy, maps, m_pred_x, m_pred_y = self.model.sess.run(
-                                                                                [
+                _, summary, avg_loss, avg_accuracy, maps, m_pred_x, m_pred_y = self.model.sess.run(
+                                                                                [   self.asoocNet_train_op,
                                                                                     self.summary_op,
                                                                                     self.model.avg_loss,
                                                                                     self.model.avg_accuracy,
