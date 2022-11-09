@@ -527,7 +527,7 @@ class Tracker:
 				# After predict_tracks targets are updated to predicted locations
 				# i.e. possible k th coordinate locations
 				# DataAssociation Task
-				associations = self.get_associations(targets, measurements)
+				associations = self.get_associations(targets, measurements, self.video_no, self.current_frame_name)
 
 				self.update_tracks(targets, measurements, associations)
 
@@ -892,7 +892,7 @@ class Tracker:
 
 		return imuk_bboxes
 
-	def get_associations(self, targets, measurements):
+	def get_associations(self, targets, measurements, video_no, frame_id):
 
 		na_present, associations = self.check_none_associations(targets, measurements)
 		if na_present:
@@ -1064,7 +1064,25 @@ class Tracker:
 																	 m_pred_x,
 																	 m_pred_y,
 																	 local_corr_map)
+		# save to local
+		example = {
+        		'target_centers': target_centers,
+        		'num_targets': targets,
+        		'm_centers': self.mapper.m_centers,
+        		'm_pred_x':m_pred_x,
+        		'm_pred_y': m_pred_y,
+        		'local_corr_map':local_corr_map,
+        		'associations':associations,
+        		'corr_scores': corr_scores}
 
+		save_path = '/content/demo/data/%s/'%video_no
+    		# create folder 
+		# Render results
+		if not os.path.exists(save_path):
+			os.makedirs(save_path)
+		filename = os.path.join(save_path, 'infer_data_video_%s_frame_%s.npy'%(video_no, frame_id))
+		np.save(filename, example)
+		
 		print('Assocnet_time:',time.time() - start_assoc_time)
 
 		# remap to objects
