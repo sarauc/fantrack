@@ -359,10 +359,11 @@ class Tracker:
 
 		# Initialize AVOD
 
-		avod_checkpoint = os.path.join(generic_utils.get_project_root(), 'object_detector/avod/data/outputs', \
+		avod_root_dir = '/content/fantrack/fan_track/object_detector/'
+	  
+		avod_checkpoint = os.path.join(avod_root_dir, 'data', \
 						  args.avod_checkpoint_name,'checkpoints', args.avod_checkpoint_name + '-' + TrackerConfig.AVOD_CKPT_NUMBER)
-		experiment_config_path = os.path.join(generic_utils.get_project_root(), 'object_detector/avod/data/outputs', \
-								 args.avod_checkpoint_name, args.avod_checkpoint_name + '.config')
+		experiment_config_path = os.path.join(avod_root_dir ,'data', args.avod_checkpoint_name, args.avod_checkpoint_name + '.config')
 
 		avod_pipeline_config = pipeline_pb2.NetworkPipelineConfig()
 		with open(experiment_config_path, 'r') as f:
