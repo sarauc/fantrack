@@ -1067,7 +1067,7 @@ class Tracker:
 		# save to local
 		example = {
         		'target_centers': target_centers,
-        		'num_targets': targets,
+        		'num_targets': len(targets),
         		'm_centers': self.mapper.m_centers,
         		'm_pred_x':m_pred_x,
         		'm_pred_y': m_pred_y,
