@@ -16,7 +16,7 @@ def main(_):
     args = gu.prepare_args()
 
     # For Cars
-    args.avod_checkpoint_name = 'pyramid_cars_with_aug_example'
+    args.avod_checkpoint_name = 'avod_cars_fast'
     # For People
     # args.avod_checkpoint_name = 'pyramid_people_example'
 
