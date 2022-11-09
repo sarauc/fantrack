@@ -87,7 +87,7 @@ class SimnetBatchSampler(MapGenerator):
         self.path_moments = os.path.join(self.dataset_path, 'moments')
 
         # check if dataset_path exists and it is a directory
-        if not (os.path.exists(self.dataset_path)):
+        if True:
             # generate bbox appearance dataset from kitti dataset
             dataset_obj = KittiSimnetDataset()
 
