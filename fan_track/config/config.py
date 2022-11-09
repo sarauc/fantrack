@@ -88,8 +88,8 @@ class TrackerConfig(GlobalConfig):
     EXISTENCE_THRESHOLD = 0.40
     SURVIVABILITY_FACTOR = 0.60
     DETECTOR_THRESHOLD = 0.28
-    AVOD_CKPT_NAME = 'pyramid_cars_with_aug_example'
-    AVOD_CKPT_NUMBER = '00221000'
+    AVOD_CKPT_NAME = 'avod_cars_fast'
+    AVOD_CKPT_NUMBER = '00093000'
 
     # length of the observation history [frames]
     OBS_HIS_LENGTH= 50
