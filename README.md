@@ -15,7 +15,7 @@
 
 ### Setup
 ---
-Please refer to this [notebook](fantrack.ipyxxx)
+Please refer to this [notebook](FanTrack.ipynb)
 
 ### Training
 ---
