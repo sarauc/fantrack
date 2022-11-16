@@ -4,7 +4,7 @@
 Please refer to this [requirement.txt](requirement.txt)
 
 ### Environment Setup
-Please refer to this [notebook](FanTrack.ipynb)
+Please refer to this [FanTrack_Instructions_Github.ipynb](FanTrack_Instructions_Github.ipynb)
 
 ### Training
 
